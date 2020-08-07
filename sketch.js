@@ -8,7 +8,7 @@ function setup(){
 
     database = firebase.database();
     console.log(database);
-    var ballPosition=database.ref('ball/position');
+    var ballPosition=database.ref('Ball/Position');
     ballPosition.on('value',readPosition);
     
 }
@@ -43,10 +43,10 @@ function readPosition(data){
 }
 
 function writePosition(x,y){
-    database.ref('ball/position').set(
+    database.ref('Ball/Position').set(
         {
             'x':position.x + x,
             'y':position.y + y
         }
-    )
+    );
 }
